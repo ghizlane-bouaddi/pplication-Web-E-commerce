@@ -5,9 +5,16 @@ class Product{
     private string $name;
     private float $prix;
     private int $stock;
-    private Category $Categorye;
+    private int $Categorye;
 
-    private PDO $
+    private PDO $connection;
+
+    
+    public function __construct(){
+        $db = new Database();
+        $this->connection=$db->getPDO();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -73,5 +80,19 @@ class Product{
         return $this;
     }
 
-    public function create()
+    public function create($name,$prix,$stock,$Categorye){
+        $quiry= "INSERT INTO products (name, prix,stock,Categorye) VALUES (?,?,?,?)";
+        $stmt =$this->connection->prepare($quiry);
+        $stmt->execute([$name,$prix,$stock,$Categorye]); 
+    }
+
+    public function findAll(){
+        $quiry="SELECT * FROM products";
+        $stmt=$this->connection->prepare($quiry);
+        $stmt->setFetchMode(PDO::FETCH_CLASS , Product::class);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+
+    }
 }

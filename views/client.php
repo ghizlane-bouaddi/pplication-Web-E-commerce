@@ -1,5 +1,6 @@
 <?php
 session_start();
+// session_start();
 ?>
 
 <!DOCTYPE html>
@@ -38,19 +39,21 @@ session_start();
     <div class="row g-4">
 
         <!-- Product card -->
+         <?php foreach ($prodects as $product): ?>
         <div class="col-6 col-md-4 col-lg-3">
             <div class="card product-card position-relative">
                 <img src="public\image\image4.jpg" class="card-img-top" alt="">
                 <div class="card-body text-center">
-                    <h6 class="card-title">Cute Dog Tee</h6>
-                    <p class="text-success fw-bold">$17.00</p>
+                    <h6 class="card-title"><?php echo $product->getName()?></h6>
+                    <p class="text-success fw-bold"><?php echo $product->getPrix()?></p>
                     <a href="#" class="btn btn-outline-primary btn-sm w-100">Add to cart</a>
                 </div>
             </div>
         </div>
+        <?php endforeach ;?>
 
         <!-- Product card -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <!-- <div class="col-6 col-md-4 col-lg-3">
             <div class="card product-card position-relative">
                 <img src="public\image\image2.jpg" class="card-img-top" alt="">
                 <div class="card-body text-center">
@@ -59,10 +62,10 @@ session_start();
                     <a href="#" class="btn btn-outline-primary btn-sm w-100">Add to cart</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Product card -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <!-- <div class="col-6 col-md-4 col-lg-3">
             <div class="card product-card position-relative">
                 <img src="public\image\image1.jpg" class="card-img-top" alt="">
                 <div class="card-body text-center">
@@ -71,10 +74,10 @@ session_start();
                     <a href="#" class="btn btn-outline-secondary btn-sm w-100 disabled">Out of stock</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Product card -->
-        <div class="col-6 col-md-4 col-lg-3">
+        <!-- <div class="col-6 col-md-4 col-lg-3">
             <div class="card product-card position-relative">
                 <img src="public\image\1.jpg" class="card-img-top" alt="">
                 <div class="card-body text-center">
@@ -86,7 +89,7 @@ session_start();
         </div>
 
     </div>
-</div>
+</div> -->
 
 </body>
 </html>

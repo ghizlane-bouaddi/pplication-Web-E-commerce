@@ -8,7 +8,7 @@ class Users{
 
     private int $role_id;
 
-    //private int $role_id;
+    //private int $role_id;visibilite
 
     private PDO $connection;
 
@@ -90,11 +90,5 @@ class Users{
         $result =$stmt->fetch();
         return $result;
     }
-
-    
-
-
-
-
 
 }

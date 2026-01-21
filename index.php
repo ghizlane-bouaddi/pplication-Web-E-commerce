@@ -3,6 +3,9 @@
 require_once "Model/database/database.php";
 require_once "Model/Services/Users.php";
 require_once "contreler/AuthConection.php";
+require_once "Model\Services\Product.php";
+require_once "contreler\ControlerAdmin.php";
+
 
 switch($_SERVER['REQUEST_URI']){
    
@@ -25,14 +28,19 @@ switch($_SERVER['REQUEST_URI']){
              break;
     case "/client":
         echo "hello client";
-        require_once "views/client.php";
+         $prodect =new ControlerAdmin();
+         $prodect->index();
+        //require_once "views/client.php";
         break;
 
     case "/admin":
         echo "hello admin";
         require_once "views/admin.php";
+        $prodect =new ControlerAdmin();
+        $prodect->create();
         break;
 
+    
 
 
 }
