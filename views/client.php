@@ -38,7 +38,6 @@ session_start();
 <div class="container my-5">
     <div class="row g-4">
 
-        <!-- Product card -->
          <?php foreach ($prodects as $product): ?>
         <div class="col-6 col-md-4 col-lg-3">
             <div class="card product-card position-relative">
