@@ -7,6 +7,7 @@ class Product{
     private int $stock;
     private Category $Categorye;
 
+    private PDO $
     public function getId()
     {
         return $this->id;
@@ -71,4 +72,6 @@ class Product{
 
         return $this;
     }
+
+    public function create()
 }
