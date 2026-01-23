@@ -22,7 +22,7 @@ session_start();
 <div class="container mt-5">
     <div class="card shadow">
         <div class="card-body">
-            <h1>Bienvenue, Client!</h1>
+            <h1>Bienvenue, Admin!</h1>
             <p class="card-title">Name: <?php echo $_SESSION['name']; ?></p>
             <p class="card-title">Email: <?php echo $_SESSION['email']; ?></p>
             <p class="card-text">

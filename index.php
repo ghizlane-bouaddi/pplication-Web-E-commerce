@@ -5,9 +5,12 @@ require_once "Model/Services/Users.php";
 require_once "contreler/AuthConection.php";
 require_once "Model\Services\Product.php";
 require_once "contreler\ControlerAdmin.php";
+require_once "contreler\contrelerPanier.php";
+
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 
-switch($_SERVER['REQUEST_URI']){
+switch($uri){
    
     case "/register":
         $auth = new AuthConection();
@@ -35,13 +38,21 @@ switch($_SERVER['REQUEST_URI']){
 
     case "/admin":
         echo "hello admin";
-        require_once "views/admin.php";
+        //require_once "views/admin.php";
         $prodect =new ControlerAdmin();
         $prodect->create();
         break;
 
-    
+    case "/addToCart" :
+        // require_once "views\Panier.php";
+        $panier = new ContrelerPanier();
+        $panier->addPanier();
+        // require_once "views\Panier.php";
+        break;
 
+    case "/Panier": 
+        require_once "views/Panier.php";
+        break;
 
 }
 

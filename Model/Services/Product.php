@@ -7,6 +7,8 @@ class Product{
     private int $stock;
     private int $Categorye;
 
+    private string $image;
+
     private PDO $connection;
 
     
@@ -27,6 +29,13 @@ class Product{
         return $this;
     }
 
+    public function getImage(){
+        return $this->image;
+    }
+
+    public function setImage($image){
+        $this->image=$image;
+    }
     public function getName()
     {
         return $this->name;
@@ -80,10 +89,10 @@ class Product{
         return $this;
     }
 
-    public function create($name,$prix,$stock,$Categorye){
-        $quiry= "INSERT INTO products (name, prix,stock,Categorye) VALUES (?,?,?,?)";
+    public function create($image,$name,$prix,$stock,$Categorye){
+        $quiry= "INSERT INTO products (image,name,prix,stock,Categorye) VALUES (?,?,?,?,?)";
         $stmt =$this->connection->prepare($quiry);
-        $stmt->execute([$name,$prix,$stock,$Categorye]); 
+        $stmt->execute([$image,$name,$prix,$stock,$Categorye]); 
     }
 
     public function findAll(){
@@ -95,4 +104,16 @@ class Product{
         return $result;
 
     }
+
+    public function findById($id){
+
+    $quiry = "SELECT *FROM products Where id =?";
+    $stmt = $this->connection->prepare($quiry);
+    $stmt->setFetchMode(PDO::FETCH_CLASS ,Product::class);
+    $stmt->execute([$id]);
+    $result =$stmt->fetch();
+    return $result;
+    }
+
+    
 }

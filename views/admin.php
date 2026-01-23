@@ -18,7 +18,7 @@ session_start();
 <nav class="navbar navbar-dark bg-primary">
     <div class="container">
         <span class="navbar-brand">Client Dashboard</span>
-        <a href="/login" class="btn btn-light btn-sm">Logout</a>
+        <a href="/login"  class="btn btn-light btn-sm">Logout</a>
     </div>
 </nav>
 
@@ -47,8 +47,13 @@ session_start();
                 <div class="card-body">
 
                     <!-- FORM -->
-                    <form method="POST" action="">
-
+                    <form method="POST" action="/admin">
+                      <!-- image-->
+                       <div class="mb-3">
+                            <label for="image">Image URL:</label>
+                            <input type="url" name="image" class="form-control" required>
+                            
+                        </div>
                         <!-- Name -->
                         <div class="mb-3">
                             <label class="form-label">Product Name</label>
@@ -72,8 +77,9 @@ session_start();
                             <label class="form-label">Category</label>
                             <select name="Categorye">
                                 <option value="">-- choose category --</option>
-                                <option value="1" >Client</option>
-                                <option value="2">Admin</option>
+                                <option value="1" >Électronique</option>
+                                <option value="2">apeterie & bureau</option>
+                                <option value="3">Automobile</option>
 
                             </select>
                         </div>
@@ -82,6 +88,8 @@ session_start();
                         <button type="submit" class="btn btn-success w-100">
                             Create Product
                         </button>
+
+                        <!-- <a type="submit" href="views\ProdectAdmin.php" class="btn btn-success w-100">Create Product</a>  -->
 
                     </form>
 
