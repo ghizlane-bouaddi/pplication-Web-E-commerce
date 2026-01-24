@@ -14,13 +14,71 @@ session_start();
 <body class="bg-light">
 
 
-
+<!-- 
 <nav class="navbar navbar-dark bg-primary">
     <div class="container">
         <span class="navbar-brand">Client Dashboard</span>
+        <a href="/prodactAdmin"  class="btn btn-light btn-sm">Logout</a>
         <a href="/login"  class="btn btn-light btn-sm">Logout</a>
     </div>
+</nav> -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/client">
+            <i class="fas fa-store me-2 text-warning"></i>
+            <span>MY<span class="text-warning">SHOP</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/client">
+                        <i class="fas fa-home me-1"></i> Accueil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prodactAdmin">
+                        <i class="fas fa-shopping-basket me-1"></i> Mes Produits
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">
+                        <i class="fas fa-box-open me-1"></i> Prefile
+                    </a>
+                </li>
+            </ul>
+
+           <div class="">
+             <a href="/login"  class="btn btn-light btn-sm">Logout</a>
+           </div>
+        </div>
+    </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="container mt-5">
     <div class="card shadow">
@@ -47,7 +105,7 @@ session_start();
                 <div class="card-body">
 
                     <!-- FORM -->
-                    <form method="POST" action="/admin">
+                    <form method="POST" action="">
                       <!-- image-->
                        <div class="mb-3">
                             <label for="image">Image URL:</label>
@@ -88,8 +146,6 @@ session_start();
                         <button type="submit" class="btn btn-success w-100">
                             Create Product
                         </button>
-
-                        <!-- <a type="submit" href="views\ProdectAdmin.php" class="btn btn-success w-100">Create Product</a>  -->
 
                     </form>
 

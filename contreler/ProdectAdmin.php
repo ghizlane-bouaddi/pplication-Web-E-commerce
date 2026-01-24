@@ -1,9 +1,19 @@
 <?php
 
-   class ContrelerPanier {
+   class ProdectAdmin {
 
+    public function index() {
+        $productModel = new Product();
+        $prodects = $productModel->findAll();
+
+        require_once "views/ProdectAdmin.php";
+    }
+
+
+   
     public function addPanier() {
 
+    
         session_start();
 
         $id = $_GET['id'] ?? null;
@@ -21,7 +31,7 @@
             }
         }
 
-        header("Location: /Panier");
+        header("Location: /prodactAdmin");
         exit;
     }
 }

@@ -12,12 +12,57 @@ session_start();
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-dark bg-primary">
+<!-- <nav class="navbar navbar-dark bg-primary">
     <div class="container">
         <span class="navbar-brand">Client Dashboard</span>
         <a href="/login" class="btn btn-light btn-sm">Logout</a>
     </div>
+</nav> -->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/client">
+            <i class="fas fa-store me-2 text-warning"></i>
+            <span>MY<span class="text-warning">SHOP</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/client">
+                        <i class="fas fa-home me-1"></i> Accueil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/prodactAdmin">
+                        <i class="fas fa-shopping-basket me-1"></i> Mes Produits
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">
+                        <i class="fas fa-box-open me-1"></i> Prefile
+                    </a>
+                </li>
+            </ul>
+
+           <div class="">
+             <a href="/login"  class="btn btn-light btn-sm">Logout</a>
+           </div>
+        </div>
+    </div>
 </nav>
+
+
+
+
+
+
 
 <div class="container mt-5">
     <div class="card shadow">
@@ -44,7 +89,7 @@ session_start();
                 <img src="<?php echo $product->getImage()?>" class="card-img-top" alt="image prodect" width="300" height="200">
                 <div class="card-body text-center">
                     <h6 class="card-title"><?php echo $product->getName()?></h6>
-                    <p class="text-success fw-bold"><?php echo $product->getPrix()?></p>
+                    <p class="text-success fw-bold"><?php echo $product->getPrix()?>DH</p>
                     <a href="/addToCart?id=<?php echo $product->getId(); ?>" class="btn btn-outline-primary btn-sm w-100">Add to cart</a>
                 </div>
             </div>

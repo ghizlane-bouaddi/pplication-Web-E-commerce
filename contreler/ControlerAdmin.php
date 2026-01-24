@@ -3,7 +3,7 @@
 class ControlerAdmin{
     public function create(){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $id =$_POST['id'];
+            // $id =$_POST['id'];
             $image =$_POST['image'];
             $name =$_POST['name'];
             $prix =$_POST['prix'];
@@ -15,7 +15,7 @@ class ControlerAdmin{
             $product = new Product();
             $product->create($image,$name,$prix,$stock,$Categorye);
             // var_dump($product);
-          header("Location: /client");
+          header("Location: /prodactAdmin");
           exit;
         }
 
