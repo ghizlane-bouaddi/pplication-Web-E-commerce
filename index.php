@@ -65,7 +65,7 @@ switch($uri){
     case "/home":
         $home = new ControlerHome();
         $home->index();
-        // require_once "views\home.php";
+        
         break;
 
     case "/editProduct":
