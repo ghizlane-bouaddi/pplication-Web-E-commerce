@@ -124,6 +124,11 @@ class Product{
     }
 
 
+    public function Edit($id){
+        $quiry = "DELETE FROM products WHERE id =?";
+        $stmt = $this->connection->prepare($quiry);
+        $stmt->execute([$id]);
+    }
 
 
     

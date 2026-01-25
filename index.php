@@ -70,12 +70,14 @@ switch($uri){
 
     case "/editProduct":
     $prodect = new ProdectAdmin();
-    $prodect->edit(); // هادي دالة جديدة غنزيدوها باش تعرض الفورم عامر
+    $prodect->EditId(); 
     break;
 
 case "/updateProduct":
     $prodect = new ProdectAdmin();
-    $prodect->Updite(); // هادي لي عندك لي كتدير POST
+    $prodect->Updite();
     break;
+
+
 }
 

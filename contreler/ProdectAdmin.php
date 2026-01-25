@@ -79,6 +79,13 @@ public function Updite() {
     }
 }
 
+public function EditId(){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $id = $_POST['id'];
+        $prodect = new Product();
+        $prodect->Edit($id);
+    }
+}
 
     
 }
