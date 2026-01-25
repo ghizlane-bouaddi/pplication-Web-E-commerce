@@ -84,6 +84,9 @@ public function EditId(){
         $id = $_POST['id'];
         $prodect = new Product();
         $prodect->Edit($id);
+
+        header("Location: /prodactAdmin");
+        exit;
     }
 }
 
