@@ -65,22 +65,7 @@ session_start();
 </nav>
 
 
-<!-- 
 
-<div class="container mt-5">
-    <div class="card shadow">
-        <div class="card-body">
-            <h1>Bienvenue, Admin!</h1>
-            <p class="card-title">Name: <?php echo $_SESSION['name']; ?></p>
-            <p class="card-title">Email: <?php echo $_SESSION['email']; ?></p>
-            <p class="card-text">
-            </p>
-
-            <button class="btn btn-primary">My Profile</button>
-            <button class="btn btn-outline-secondary">My Orders</button>
-        </div>
-    </div>
-</div> -->
 
 <div class="container mt-4">
     <div class="row">
@@ -125,7 +110,22 @@ session_start();
                 <div class="card-body text-center">
                     <h6 class="card-title"><?php echo $product->getName()?></h6>
                     <p class="text-success fw-bold"><?php echo $product->getPrix()?>DH</p>
-                    <a href="/addToCart?id=<?php echo $product->getId(); ?>" class="btn btn-outline-primary btn-sm w-100">Add to cart</a>
+                    <!-- <a href="/addToCart?id=<?php echo $product->getId(); ?>" class="btn btn-outline-primary btn-sm w-100">Add to cart</a> -->
+                    <div class="d-flex gap-5 me-auto w-100">
+            
+            <a href="/editProduct?id=<?php echo $product->getId(); ?>" class="btn btn-outline-info btn-sm d-flex align-items-center justify-content-center px-3 py-2" title="Modifier">
+                <i class="fas fa-edit">updite</i>
+            </a>
+
+            <a href="" class="btn btn-outline-danger btn-sm d-flex align-items-center justify-content-center px-3 py-2" onclick="return confirm('Voulez-vous vraiment supprimer ce produit ?')" title="Supprimer">
+                <i class="fas fa-trash-alt">delet</i>
+            </a>
+        </div> 
+
+
+
+
+
                 </div>
             </div>
         </div>

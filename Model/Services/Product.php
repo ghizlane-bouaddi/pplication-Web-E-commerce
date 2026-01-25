@@ -115,5 +115,16 @@ class Product{
     return $result;
     }
 
+
+    public function Updite($id,$image,$name,$prix,$stock,$Categorye){
+        $quiry = "UPDATE products SET image=?,name =?,prix=?,stock=?,Categorye=? WHERE id =?";
+        $stmt =$this->connection->prepare($quiry);
+        $stmt->execute([$image,$name,$prix,$stock,$Categorye,$id]);
+
+    }
+
+
+
+
     
 }

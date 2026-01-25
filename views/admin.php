@@ -59,35 +59,30 @@ session_start();
     </div>
 </nav>
 
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm p-4 mb-4" style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 15px;">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="position-relative">
+                            <img src="https://ui-avatars.com/api/?name=ghizlane&background=0D8ABC&color=fff&size=80" 
+                                 alt="Admin" class="rounded-circle border border-3 border-light shadow-sm">
+                            <span class="position-absolute bottom-0 end-0 bg-success border border-2 border-white rounded-circle p-2" title="Online"></span>
+                        </div>
+                        
+                        <div class="text-white">
+                            <h2 class="fw-bold mb-1" style="letter-spacing: -0.5px;">Bienvenue,<?php echo $_SESSION['name']; ?></h2>
+                            <p class="mb-0 opacity-75 d-flex align-items-center gap-2">
+                                <i class="fas fa-envelope small"></i><?php echo $_SESSION['email']; ?> </p>
+                            <span class="badge bg-info bg-opacity-25 text-info mt-2 px-3 py-2 rounded-pill fw-normal">
+                                <i class="fas fa-shield-alt me-1"></i> Administrateur Principal
+                            </span>
+                        </div>
+                    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container mt-5">
-    <div class="card shadow">
-        <div class="card-body">
-            <h1>Bienvenue, Admin!</h1>
-            <p class="card-title">Name: <?php echo $_SESSION['name']; ?></p>
-            <p class="card-title">Email: <?php echo $_SESSION['email']; ?></p>
-            <p class="card-text">
-            </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

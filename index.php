@@ -7,6 +7,8 @@ require_once "Model\Services\Product.php";
 require_once "contreler\ControlerAdmin.php";
 require_once "contreler\contrelerPanier.php";
 require_once "contreler\ProdectAdmin.php";
+require_once "contreler\ControlerHome.php";
+require_once "contreler\ControlerHome.php";
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -58,6 +60,22 @@ switch($uri){
     case "/prodactAdmin":
     $prodect = new ProdectAdmin();
     $prodect->index();
+    break;
+
+    case "/home":
+        $home = new ControlerHome();
+        $home->index();
+        // require_once "views\home.php";
+        break;
+
+    case "/editProduct":
+    $prodect = new ProdectAdmin();
+    $prodect->edit(); // هادي دالة جديدة غنزيدوها باش تعرض الفورم عامر
+    break;
+
+case "/updateProduct":
+    $prodect = new ProdectAdmin();
+    $prodect->Updite(); // هادي لي عندك لي كتدير POST
     break;
 }
 

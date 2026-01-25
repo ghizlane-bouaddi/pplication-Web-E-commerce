@@ -2,6 +2,29 @@
 
    class ProdectAdmin {
 
+//    public function create(){
+//         if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//              $id =$_POST['id'];
+//             $image =$_POST['image'];
+//             $name =$_POST['name'];
+//             $prix =$_POST['prix'];
+//             // var_dump($prix);
+//             $stock =$_POST['stock'];
+//             $Categorye =$_POST['Categorye'];
+
+//            // var_dump($Categorye);
+//             $product = new Product();
+//             $product->create($image,$name,$prix,$stock,$Categorye);
+//             // var_dump($product);
+//         //   header("Location: /prodactAdmin");
+//         //   exit;
+//         }
+
+//         require_once "views\client.php";
+//     }
+
+
+
     public function index() {
         $productModel = new Product();
         $prodects = $productModel->findAll();
@@ -24,15 +47,39 @@
                 $_SESSION['panier'] = [];
             }
 
-            if (isset($_SESSION['panier'][$id])) {
-                $_SESSION['panier'][$id]++;
-            } else {
-                $_SESSION['panier'][$id] = 1;
-            }
         }
-
         header("Location: /prodactAdmin");
         exit;
     }
+
+    public function edit() {
+    $id = $_GET['id'] ?? null;
+    if ($id) {
+        $productModel = new Product();
+        $product = $productModel->findById($id);
+        require_once "views\updite.php"; 
+    }
+}
+
+public function Updite() {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $id = $_POST['id'];
+        $image = $_POST['image'];
+        $name = $_POST['name'];
+        $prix = $_POST['prix'];
+        $stock = $_POST['stock'];
+        $Categorye = $_POST['Categorye'];
+
+        $productModel = new Product();
+        
+        $productModel->Updite($id, $image, $name, $prix, $stock, $Categorye);
+        
+        header("Location: /prodactAdmin");
+        exit;
+    }
+}
+
+
+    
 }
 

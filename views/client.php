@@ -58,13 +58,7 @@ session_start();
     </div>
 </nav>
 
-
-
-
-
-
-
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <div class="card shadow">
         <div class="card-body">
             <h1>Bienvenue, Client!</h1>
@@ -75,6 +69,29 @@ session_start();
 
             <button class="btn btn-primary">My Profile</button>
             <button class="btn btn-outline-secondary">My Orders</button>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm p-4 mb-4" style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border-radius: 15px;">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <div class="d-flex align-items-center gap-4">
+                        
+                        
+                        <div class="text-white">
+                            <h2 class="fw-bold mb-1" style="letter-spacing: -0.5px;">Bienvenue,<?php echo $_SESSION['name']; ?></h2>
+                            <p class="mb-0 opacity-75 d-flex align-items-center gap-2">
+                                <i class="fas fa-envelope small"></i><?php echo $_SESSION['email']; ?> </p>
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
